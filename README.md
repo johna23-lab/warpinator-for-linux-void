@@ -13,7 +13,7 @@
 
 Download git, compile and create xbps pkg
 ```
-sudo xbps-install meson git python3-setproctitle python3-cryptography python3-nacl python3-netifaces python3-grpcio python3-google-auth python3-protobuf python3-zeroconf
+sudo xbps-install meson git python3-setproctitle python3-cryptography python3-nacl python3-netifaces python3-grpcio python3-google-auth python3-protobuf python3-zeroconf python3-xapp meson gettext
 git clone https://github.com/linuxmint/warpinator.git
 cd warpinator
 
