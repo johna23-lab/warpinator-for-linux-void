@@ -20,9 +20,9 @@ cd warpinator
 git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 meson build --prefix=/usr -Dbundle-zeroconf=false
 meson compile -C build
-meson install -C build --destdir /home/void/warpinator_c/
+meson install -C build --destdir ~/warpinator_c/
 
-xbps-create -A "x86_64" -n "warpinator-1.2.13.r1.g8fd5f86_1" -s "warpinator-1.2.13.r1.g8fd5f86_1" -D "python3-setproctitle>=1.2.1 python3-cryptography>=37.0.4 python3-nacl>=1.4.0 python3-netifaces>=0.11.0 python3-grpcio>=1.39.0 python3-google-auth>=1.28.0 python3-protobuf>=4.21.5 python3-zeroconf>=0.38.7" warpinator_c/
+xbps-create -A "x86_64" -n "warpinator-1.2.13.r1.g8fd5f86_1" -s "warpinator-1.2.13.r1.g8fd5f86_1" -D "python3-setproctitle>=1.2.1 python3-cryptography>=37.0.4 python3-nacl>=1.4.0 python3-netifaces>=0.11.0 python3-grpcio>=1.39.0 python3-google-auth>=1.28.0 python3-protobuf>=4.21.5 python3-zeroconf>=0.38.7" ~/warpinator_c/
 ```
 INSTALLATION of the XBPS
 ```
