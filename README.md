@@ -24,6 +24,17 @@ meson install -C build --destdir ~/warpinator_c/
 
 xbps-create -A "x86_64" -n "warpinator-1.2.13.r1.g8fd5f86_1" -s "warpinator-1.2.13.r1.g8fd5f86_1" -D "python3-setproctitle>=1.2.1 python3-cryptography>=37.0.4 python3-nacl>=1.4.0 python3-netifaces>=0.11.0 python3-grpcio>=1.39.0 python3-google-auth>=1.28.0 python3-protobuf>=4.21.5 python3-zeroconf>=0.38.7" ~/warpinator_c/
 ```
+Or just use the template i created with xbps-src (https://github.com/void-linux/void-packages)
+```
+$ git clone https://github.com/void-linux/void-packages.git
+$ cd void-packages
+$ ./xbps-src binary-bootstrap
+$ cd xbps-src
+$ mkdir -p srcpkg/warpinator
+$ wget https://raw.githubusercontent.com/johna23-lab/warpinator-for-linux-void/main/template -O srcpkg/warpinator/
+$ ./xbps-src pkg warpinator
+```
+
 INSTALLATION of the XBPS
 ```
 xbps-rindex -a warpinator-1.2.13.r1.g8fd5f86_1.x86_64.xbps
