@@ -1,0 +1,27 @@
+# Template file for 'warpinator'
+pkgname=warpinator
+version=1.6.1
+revision=1
+wrksrc=warpinator-master
+build_style=meson
+configure_args="--prefix=/usr -Dbundle-zeroconf=false"
+hostmakedepends="tar libpng-devel binutils-devel patch automake autoconf libtool meson git python3-setproctitle python3-cryptography python3-nacl python3-netifaces python3-grpcio python3-google-auth 
+python3-protobuf python3-zeroconf gettext polkit-devel"
+
+depends="python3-setproctitle python3-cryptography python3-nacl python3-netifaces python3-grpcio python3-google-auth python3-protobuf python3-zeroconf"
+
+short_desc="Share files across the LAN."
+maintainer="JOHNA23-LAB"
+license="GPL-2.0-or-later"
+homepage="https://github.com/linuxmint/warpinator"
+distfiles="https://github.com/linuxmint/warpinator/archive/refs/heads/master.zip"
+checksum=4d76d54f2fddfb75ae076a15898e8941bdb5f6feb0e61f0774bcda595bbf1e94
+
+configure() {
+meson build --prefix=/usr -Dbundle-zeroconf=false
+meson install -C build
+}
+
+do_install() {
+meson install -C build --destdir ${DESTDIR}
+}
